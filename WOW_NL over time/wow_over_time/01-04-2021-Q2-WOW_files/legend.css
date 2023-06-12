@@ -1,0 +1,484 @@
+/* GENERAL */
+.temperature,
+.pressure_msl,
+.rain_rate,
+.humidity,
+.soil_moisture,
+.wind,
+.weather_code {
+	text-align:center;
+	color:#fff;
+	line-height:24px;
+	font-size:11px;
+	z-index:10;
+
+}
+
+.temperature,
+.rain_rate,
+.weather_code {
+	box-shadow:0 3px 5px rgba(0,0,0,0.18);
+}
+
+.legend-weather_code .weather_code {
+	box-shadow: none;
+}
+
+
+/* temperature */
+.temperature {
+	background: transparent url(../images/sprite/temperature_new.png) top left no-repeat;
+	width:24px;
+	height:24px;
+}
+
+.legend-list .temperature {zoom:0.5;}
+
+.temperature.res-0{background-position:0 0}
+.temperature.res-1{background-position:0 -24px}
+.temperature.res-2{background-position:0 -48px}
+.temperature.res-3{background-position:0 -72px}
+.temperature.res-4{background-position:0 -96px}
+.temperature.res-5{background-position:0 -120px}
+.temperature.res-6{background-position:0 -144px}
+.temperature.res-7{background-position:0 -168px}
+.temperature.res-8{background-position:0 -192px}
+.temperature.res-9{background-position:0 -216px}
+.temperature.res-10{background-position:0 -240px}
+.temperature.res-11{background-position:0 -264px}
+.temperature.res-12{background-position:0 -288px}
+.temperature.res-13{background-position:0 -312px}
+.temperature.res-14{background-position:0 -336px}
+.temperature.res-15{background-position:0 -360px}
+.temperature.res-16{background-position:0 -384px}
+.temperature.res-17{background-position:0 -408px}
+.temperature.res-18{background-position:0 -432px}
+.temperature.res-19{background-position:0 -456px}
+.temperature.res-20{background-position:0 -480px}
+.temperature.res-21{background-position:0 -504px}
+.temperature.res-22{background-position:0 -528px}
+.temperature.res-23{background-position:0 -552px}
+.temperature.res-24{background-position:0 -576px}
+.temperature.res-25{background-position:0 -600px}
+.temperature.res-26{background-position:0 -624px}
+
+/* PRESSURE */
+.pressure_msl {
+	background: transparent url(../images/sprite/pressure_msl_mo.png) top left no-repeat;
+	width:55px;
+	height:50px;
+	line-height: 63px;
+}
+
+.pressure_msl .value {
+	color: #000;
+}
+
+.zoom-3 .pressure_msl, .zoom-4 .pressure_msl, .zoom-5 .pressure_msl, .zoom-6 .pressure_msl {transform: scale(.6); -ms-transform: scale(.6);}
+.zoom-7 .pressure_msl {transform: scale(.7); -ms-transform: scale(.7);}
+.zoom-8 .pressure_msl {transform: scale(.8); -ms-transform: scale(.8);}
+.zoom-10 .pressure_msl, .zoom-9 .pressure_msl {transform: scale(.9); -ms-transform: scale(.9);}
+
+.pressure_msl.res-0{background-position:0 0}
+.pressure_msl.res-1{background-position:0 -50px}
+.pressure_msl.res-2{background-position:0 -100px}
+.pressure_msl.res-3{background-position:0 -150px}
+.pressure_msl.res-4{background-position:0 -200px}
+.pressure_msl.res-5{background-position:0 -250px}
+.pressure_msl.res-6{background-position:0 -300px}
+.pressure_msl.res-7{background-position:0 -350px}
+.pressure_msl.res-8{background-position:0 -400px}
+.pressure_msl.res-9{background-position:0 -450px}
+.pressure_msl.res-10{background-position:0 -500px}
+.pressure_msl.res-11{background-position:0 -550px}
+.pressure_msl.res-12{background-position:0 -600px}
+.pressure_msl.res-13{background-position:0 -650px}
+.pressure_msl.res-14{background-position:0 -700px}
+.pressure_msl.res-15{background-position:0 -750px}
+.pressure_msl.res-16{background-position:0 -800px}
+.pressure_msl.res-17{background-position:0 -850px}
+.pressure_msl.res-18{background-position:0 -900px}
+.pressure_msl.res-19{background-position:0 -950px}
+.pressure_msl.res-20{background-position:0 -1000px}
+
+.pressure_msl_small {
+	background: transparent url(../images/sprite/pressure_msl_small.png) top left no-repeat;
+	width:28px;
+	height:25px;
+	line-height: 25px;
+}
+.pressure_msl_small.res-0{background-position:0 0}
+.pressure_msl_small.res-1{background-position:0 -25px}
+.pressure_msl_small.res-2{background-position:0 -50px}
+.pressure_msl_small.res-3{background-position:0 -75px}
+.pressure_msl_small.res-4{background-position:0 -100px}
+.pressure_msl_small.res-5{background-position:0 -125px}
+.pressure_msl_small.res-6{background-position:0 -150px}
+.pressure_msl_small.res-7{background-position:0 -175px}
+.pressure_msl_small.res-8{background-position:0 -200px}
+.pressure_msl_small.res-9{background-position:0 -225px}
+.pressure_msl_small.res-10{background-position:0 -250px}
+.pressure_msl_small.res-11{background-position:0 -275px}
+.pressure_msl_small.res-12{background-position:0 -300px}
+.pressure_msl_small.res-13{background-position:0 -325px}
+.pressure_msl_small.res-14{background-position:0 -350px}
+.pressure_msl_small.res-15{background-position:0 -375px}
+.pressure_msl_small.res-16{background-position:0 -400px}
+.pressure_msl_small.res-17{background-position:0 -425px}
+.pressure_msl_small.res-18{background-position:0 -450px}
+.pressure_msl_small.res-19{background-position:0 -475px}
+.pressure_msl_small.res-20{background-position:0 -500px}
+
+/* RAIN RATE */
+.rain_rate {
+	background: transparent url(../images/sprite/rain_rate_new.png) top left no-repeat;
+	width:24px;
+	height:24px;
+}
+
+.rain_rate.res-0{background-position:0 0}
+.rain_rate.res-1{background-position:0 -24px}
+.rain_rate.res-2{background-position:0 -48px}
+.rain_rate.res-3{background-position:0 -72px}
+.rain_rate.res-4{background-position:0 -96px}
+.rain_rate.res-5{background-position:0 -120px}
+.rain_rate.res-6{background-position:0 -144px}
+.rain_rate.res-7{background-position:0 -168px}
+.rain_rate.res-8{background-position:0 -192px}
+
+.legend-list .rain_rate {zoom:0.5;}
+
+/* HUMIDITY/MOISTURE */
+.humidity,
+.soil_moisture {
+	background: transparent url(../images/sprite/humidity_mo_new.png) top left no-repeat;
+	width:34px;
+	height:36px;
+	line-height:30px;
+}
+
+.humidity.res-0, .soil_moisture.res-0{background-position:0 0}
+.humidity.res-1, .soil_moisture.res-1{background-position:0 -36px}
+.humidity.res-2, .soil_moisture.res-2{background-position:0 -72px}
+.humidity.res-3, .soil_moisture.res-3{background-position:0 -108px}
+.humidity.res-4, .soil_moisture.res-4{background-position:0 -144px}
+.humidity.res-5, .soil_moisture.res-5{background-position:0 -180px}
+.humidity.res-6, .soil_moisture.res-6{background-position:0 -216px}
+.humidity.res-7, .soil_moisture.res-7{background-position:0 -252px}
+.humidity.res-8, .soil_moisture.res-8{background-position:0 -288px}
+.humidity.res-9, .soil_moisture.res-9{background-position:0 -324px}
+.humidity.res-10, .soil_moisture.res-10{background-position:0 -360px}
+.humidity.res-11, .soil_moisture.res-11{background-position:0 -396px}
+.humidity.res-12, .soil_moisture.res-12{background-position:0 -432px}
+.humidity.res-13, .soil_moisture.res-13{background-position:0 -468px}
+.humidity.res-14, .soil_moisture.res-14{background-position:0 -504px}
+.humidity.res-15, .soil_moisture.res-15{background-position:0 -540px}
+.humidity.res-16, .soil_moisture.res-16{background-position:0 -576px}
+.humidity.res-17, .soil_moisture.res-17{background-position:0 -612px}
+.humidity.res-18, .soil_moisture.res-18{background-position:0 -648px}
+.humidity.res-19, .soil_moisture.res-19{background-position:0 -684px}
+.humidity.res-20, .soil_moisture.res-20{background-position:0 -720px}
+.humidity.res-21, .soil_moisture.res-21{background-position:0 -756px}
+.humidity.res-22, .soil_moisture.res-22{background-position:0 -792px}
+.humidity.res-23, .soil_moisture.res-23{background-position:0 -828px}
+.humidity.res-24, .soil_moisture.res-24{background-position:0 -864px}
+.humidity.res-25, .soil_moisture.res-25{background-position:0 -864px}
+
+.humidity_small {
+	zoom:0.5;
+}
+
+
+/* WIND SPEED/DIRECTION */
+.wind {
+	background: transparent url(../images/sprite/wind_new.png) top left no-repeat;
+	width:70px;
+	height:70px;
+	position:relative;
+}
+
+
+
+.wind span.value {display:none;}
+.show-marker-labels .wind span.value {display:block;}
+.show-marker-labels .wind {
+	background: transparent url(../images/sprite/wind_new_value.png) top left no-repeat;
+	line-height:70px;
+	font-size:9px;
+}
+.wind.res-3-direction-0{background-position:0 0}
+.wind.res-3-direction-1{background-position:0 -70px}
+.wind.res-3-direction-2{background-position:0 -140px}
+.wind.res-3-direction-3{background-position:0 -210px}
+.wind.res-3-direction-4{background-position:0 -280px}
+.wind.res-3-direction-5{background-position:0 -350px}
+.wind.res-3-direction-6{background-position:0 -420px}
+.wind.res-3-direction-7{background-position:0 -490px}
+.wind.res-3-direction-8{background-position:0 -560px}
+.wind.res-3-direction-9{background-position:0 -630px}
+.wind.res-3-direction-10{background-position:0 -700px}
+.wind.res-3-direction-11{background-position:0 -770px}
+.wind.res-3-direction-12{background-position:0 -840px}
+.wind.res-3-direction-13{background-position:0 -910px}
+.wind.res-3-direction-14{background-position:0 -980px}
+.wind.res-3-direction-15{background-position:0 -1050px}
+.wind.res-3-direction-16{background-position:0 -1120px}
+.wind.res-3-direction-17{background-position:0 -1190px}
+.wind.res-3-direction-18{background-position:0 -1260px}
+.wind.res-3-direction-19{background-position:0 -1330px}
+.wind.res-3-direction-20{background-position:0 -1400px}
+.wind.res-3-direction-21{background-position:0 -1470px}
+.wind.res-3-direction-22{background-position:0 -1540px}
+.wind.res-3-direction-23{background-position:0 -1610px}
+
+.wind.res-2-direction-0{background-position:-70px 0}
+.wind.res-2-direction-1{background-position:-70px -70px}
+.wind.res-2-direction-2{background-position:-70px -140px}
+.wind.res-2-direction-3{background-position:-70px -210px}
+.wind.res-2-direction-4{background-position:-70px -280px}
+.wind.res-2-direction-5{background-position:-70px -350px}
+.wind.res-2-direction-6{background-position:-70px -420px}
+.wind.res-2-direction-7{background-position:-70px -490px}
+.wind.res-2-direction-8{background-position:-70px -560px}
+.wind.res-2-direction-9{background-position:-70px -630px}
+.wind.res-2-direction-10{background-position:-70px -700px}
+.wind.res-2-direction-11{background-position:-70px -770px}
+.wind.res-2-direction-12{background-position:-70px -840px}
+.wind.res-2-direction-13{background-position:-70px -910px}
+.wind.res-2-direction-14{background-position:-70px -980px}
+.wind.res-2-direction-15{background-position:-70px -1050px}
+.wind.res-2-direction-16{background-position:-70px -1120px}
+.wind.res-2-direction-17{background-position:-70px -1190px}
+.wind.res-2-direction-18{background-position:-70px -1260px}
+.wind.res-2-direction-19{background-position:-70px -1330px}
+.wind.res-2-direction-20{background-position:-70px -1400px}
+.wind.res-2-direction-21{background-position:-70px -1470px}
+.wind.res-2-direction-22{background-position:-70px -1540px}
+.wind.res-2-direction-23{background-position:-70px -1610px}
+
+.wind.res-1-direction-0{background-position:-140px 0}
+.wind.res-1-direction-1{background-position:-140px -70px}
+.wind.res-1-direction-2{background-position:-140px -140px}
+.wind.res-1-direction-3{background-position:-140px -210px}
+.wind.res-1-direction-4{background-position:-140px -280px}
+.wind.res-1-direction-5{background-position:-140px -350px}
+.wind.res-1-direction-6{background-position:-140px -420px}
+.wind.res-1-direction-7{background-position:-140px -490px}
+.wind.res-1-direction-8{background-position:-140px -560px}
+.wind.res-1-direction-9{background-position:-140px -630px}
+.wind.res-1-direction-10{background-position:-140px -700px}
+.wind.res-1-direction-11{background-position:-140px -770px}
+.wind.res-1-direction-12{background-position:-140px -840px}
+.wind.res-1-direction-13{background-position:-140px -910px}
+.wind.res-1-direction-14{background-position:-140px -980px}
+.wind.res-1-direction-15{background-position:-140px -1050px}
+.wind.res-1-direction-16{background-position:-140px -1120px}
+.wind.res-1-direction-17{background-position:-140px -1190px}
+.wind.res-1-direction-18{background-position:-140px -1260px}
+.wind.res-1-direction-19{background-position:-140px -1330px}
+.wind.res-1-direction-20{background-position:-140px -1400px}
+.wind.res-1-direction-21{background-position:-140px -1470px}
+.wind.res-1-direction-22{background-position:-140px -1540px}
+.wind.res-1-direction-23{background-position:-140px -1610px}
+
+.wind.res-0-direction-0{background-position:-210px 0}
+.wind.res-0-direction-1{background-position:-210px -70px}
+.wind.res-0-direction-2{background-position:-210px -140px}
+.wind.res-0-direction-3{background-position:-210px -210px}
+.wind.res-0-direction-4{background-position:-210px -280px}
+.wind.res-0-direction-5{background-position:-210px -350px}
+.wind.res-0-direction-6{background-position:-210px -420px}
+.wind.res-0-direction-7{background-position:-210px -490px}
+.wind.res-0-direction-8{background-position:-210px -560px}
+.wind.res-0-direction-9{background-position:-210px -630px}
+.wind.res-0-direction-10{background-position:-210px -700px}
+.wind.res-0-direction-11{background-position:-210px -770px}
+.wind.res-0-direction-12{background-position:-210px -840px}
+.wind.res-0-direction-13{background-position:-210px -910px}
+.wind.res-0-direction-14{background-position:-210px -980px}
+.wind.res-0-direction-15{background-position:-210px -1050px}
+.wind.res-0-direction-16{background-position:-210px -1120px}
+.wind.res-0-direction-17{background-position:-210px -1190px}
+.wind.res-0-direction-18{background-position:-210px -1260px}
+.wind.res-0-direction-19{background-position:-210px -1330px}
+.wind.res-0-direction-20{background-position:-210px -1400px}
+.wind.res-0-direction-21{background-position:-210px -1470px}
+.wind.res-0-direction-22{background-position:-210px -1540px}
+.wind.res-0-direction-23{background-position:-210px -1610px}
+
+.legend-list .wind,
+.wind.no-wind {
+	background: transparent url(../images/sprite/wind.png) top left no-repeat;
+	width:30px;
+	height:30px;
+	line-height:30px;
+
+	-webkit-transform:scale(0.7);
+	-moz-transform:scale(0.7);
+	-ms-transform:scale(0.7);
+	-o-transform:scale(0.7);
+	transform:scale(0.7);
+
+	font-size:12px;
+}
+
+/*.marker.wind.no-data {
+	background-image:url(../images/sprite/no_data.png);
+}
+*/
+.marker.wind.no-data span {
+	display: none !important;
+}
+
+
+.legend-list .wind.res-0-direction-24, .wind.no-wind{background-position:0 -720px}
+.legend-list .wind.res-0-direction-14{background-position:0 -420px}
+.legend-list .wind.res-1-direction-14{background-position:-30px -420px}
+.legend-list .wind.res-2-direction-14{background-position:-60px -420px}
+.legend-list .wind.res-3-direction-14{background-position:-90px -420px}
+/* WEATHER CODES */
+.weather_code {
+	background: transparent url(../images/sprite/weather_code_mo.png) top left no-repeat;
+	width:32px;
+	height:32px;
+}
+
+ul.legend-list.wc .weather_code{
+	transform:scale(0.7);
+	-ms-transform:scale(0.7);
+}
+
+ul.legend-list.wc > li {
+	margin-right:0;
+}
+
+.weather_code.res-0{background-position:0 0}
+.weather_code.res-1{background-position:0 -32px}
+.weather_code.res-2{background-position:0 -64px}
+.weather_code.res-3{background-position:0 -96px}
+.weather_code.res-4{background-position:0 -128px}
+.weather_code.res-5{background-position:0 -160px}
+.weather_code.res-6{background-position:0 -192px}
+.weather_code.res-7{background-position:0 -224px}
+.weather_code.res-8{background-position:0 -256px}
+.weather_code.res-9{background-position:0 -288px}
+.weather_code.res-10{background-position:0 -320px}
+.weather_code.res-11{background-position:0 -352px}
+.weather_code.res-12{background-position:0 -384px}
+.weather_code.res-13{background-position:0 -416px}
+.weather_code.res-14{background-position:0 -448px}
+.weather_code.res-15{background-position:0 -480px}
+.weather_code.res-16{background-position:0 -512px}
+.weather_code.res-17{background-position:0 -544px}
+.weather_code.res-18{background-position:0 -576px}
+
+.weather_code span.value {display:none;}
+
+/* WEATHER CODES */
+.no-data, .no-data.wind {
+	background: transparent url(../images/sprite/no_data.png) top left no-repeat;
+	width:16px;
+	height:16px;
+}
+
+
+.no-data.official {background-position:0 -15px;}
+.no-data.wow {background-position:0 -15px;}
+
+.temperature.no-data,
+.pressure_msl.no-data,
+.rain_rate.no-data,
+.humidity.no-data,
+.soil_moisture.no-data,
+.wind.no-data,
+.weather_code.no-data {
+	box-shadow:none;
+}
+
+.legend.active {
+	display:block;
+}
+.legend {
+	display:none;
+}
+
+ul.legend-list {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+ul.legend-list > li{
+	float:left;
+	text-align:center;
+	font-size:12px;
+	margin-right:4px;
+	margin-bottom:0;
+}
+
+ul.legend-list.legend-wind > li {
+	margin-right:2px;
+}
+
+ul.legend-list > li > div {
+	margin: 0 auto;
+}
+
+ul.legend-list.wc > li {
+	/*margin-right: 8px;
+	margin-bottom: 5px;*/
+}
+
+.legend.legend-nodata {
+	border-top: 1px solid #CCC;
+	margin-top: 15px;
+}
+
+ul.legend-list.nodata {
+	margin-top:10px;
+}
+
+ul.legend-list.nodata > li > div {
+	margin:0;
+	display:inline-block;
+}
+
+ul.legend-list.nodata > li {
+	float: none;
+	text-align: left;
+	line-height: 14px;
+	vertical-align: top;
+}
+
+.legend-rain_radar {
+	display: none;
+}
+
+.legend-rain_radar .legend-list {
+	margin: 6px 0px;
+}
+
+/*.legend-rain_radar li {
+	width: 100%;
+}
+
+.val-0 {
+	background: #010000;
+}
+.val-1 {
+	background: #ff0000;
+}
+
+.val-2 {
+	background: #ff8080
+}
+
+.val-3 {
+	background: #555555
+}
+.val-4 {
+	background: #aaaaaa;
+}
+.val-5 {
+	background: #ffffff
+}*/

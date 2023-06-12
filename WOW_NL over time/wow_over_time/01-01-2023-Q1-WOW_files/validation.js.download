@@ -1,0 +1,202 @@
+KNMI.Components.Validation = (function(){
+	
+	var self = {},
+		// shortcuts
+		messages = KNMI.Config.messages,
+		infoWindow = KNMI.Components.InfoWindow,
+
+		// store errors
+		errors = [],
+		active = false,
+
+		// elements
+		checkboxes = null,
+
+		// Graph Form
+		initGraphValidations = function(form){
+			var updateBtn = form.find('.update'),
+				hiddenStart = form.find('#graph-startdate').parent().find('[name="start"]'),
+				hiddenEnd = form.find('#graph-enddate').parent().find('[name="end"]'),
+				compareEl = form.find('#graph-compare_siteid');
+			checkboxes = form.find('[type="checkbox"]');
+
+			// store btns	
+			self.updateBtn = updateBtn;
+			self.form = form;
+
+			hiddenStart.on('change',function(){
+				validateDate($(this))
+				compareStartDates(hiddenStart,hiddenEnd, hiddenStart)
+			});
+
+			hiddenEnd.on('change',function(){
+				validateDate($(this));
+				compareStartDates(hiddenStart,hiddenEnd, hiddenEnd)
+			});
+
+			// compareEl.on('change',function(){
+			// 	//validateSiteExistance(compareEl);
+			// }).on('blur',function(){
+			// 	validateSiteExistance(compareEl);
+			// }).on('keyup',function(e){
+			// 	if(e.keyCode == 13){
+			// 		compareEl.trigger('blur')
+			// 	}
+			// });
+
+			// handle checkboxes
+			for(var i=0; i < checkboxes.length; i ++){
+				var checkbox = $(checkboxes[i]);
+				checkbox.on('change',function(){
+					validateLayers();					
+				});
+			}
+		},
+
+		// push error from list
+		pushError = function(errorObj){
+			if(!active) return false;
+			if(getIndex(errorObj) == -1){
+				errors.push(errorObj)
+			}
+			
+			errorObj.el.parent().addClass('has-error');
+			infoWindow.showMessage('error', messages.error[errorObj.error]);
+
+			checkTotalErrors();
+		},
+
+		// remove error from list
+		removeError = function(errorObj){
+			errorObj.el.parent().removeClass('has-error');
+
+			if(getIndex(errorObj) != -1){
+				errors.splice(getIndex(errorObj),1);
+			}
+
+			checkTotalErrors();
+		},
+
+		// check total filters
+		validateLayers = function(){
+			var totalFiltersOn = checkboxes.filter(':checked').length;
+			if(totalFiltersOn == 0){
+				pushError({el : $(checkboxes.get(0)).parents('.col-med'),error: 'filter-min'})	
+			} else if (totalFiltersOn > 5){
+				pushError({el : $(checkboxes.get(0)).parents('.col-med'),error: 'filter-max'})	
+			} 
+			// no error
+			else {
+				removeError({el : $(checkboxes.get(0)).parents('.col-med'),error: 'filter-min'})
+				removeError({el : $(checkboxes.get(0)).parents('.col-med'),error: 'filter-max'})
+			}
+		},
+
+		// check total errors
+		checkTotalErrors = function(){
+			if(errors.length > 0){
+				self.updateBtn.attr('disabled',true)
+			} else {
+				self.updateBtn.attr('disabled',false)
+			}
+		},
+
+		activateValidations = function(){
+			active = true;
+			validateLayers();
+		},
+
+		// get index of obj element
+		getIndex = function(obj){
+			var index = -1;
+			for(var i=0, t = errors.length; i < t; i ++ ){
+				var error = errors[i];
+				if(error.el.get(0) == obj.el.get(0) && error.error == obj.error){
+					index = i;
+				}
+			}
+			return index;
+		},
+
+		// site excistance
+		validateSiteExistance = function(el){
+			if(!KNMI.Components.FormHandler.getLocationsData().locationsList.length) return false;
+			var valid = KNMI.Components.FormHandler.getLocationsData().locationsData[el.val()] !== undefined || $(el).val() === "" ? true : false;
+			var errorType = 'invalid-site';
+
+			if(valid){
+				removeError({el : el,error: errorType});
+			} else {
+				pushError({el : el,error: errorType});
+			}
+		},
+
+		// check if date is date
+		validateDate = function(el){
+			var valid = moment($(el).val(), KNMI.Config.global.dateFormat).isValid();
+			var errorType = 'invalid-date';
+
+			if(valid){
+				removeError({el : el,error: errorType});
+			} else {
+				pushError({el : el,error: errorType});
+			}
+			return valid;
+		},
+
+		// check if time is valid
+		validateTime = function(el){
+			var valid = moment($(el).val(), 'HH:mm', true).isValid();
+			var errorType = 'invalid-time';
+
+			if(valid){
+				removeError({el : el,error: errorType});
+			} else {
+				pushError({el : el,error: errorType});
+			}
+			return valid;
+		},
+
+		// check startDate smaller then endDate
+		compareStartDates = function(startDate,endDate, target){
+			if(endDate.val() === '' || startDate.val() === '') return false;
+
+			var format = KNMI.Config.global.dateFormat;
+			var	valid = moment(startDate.val(), format).isBefore(moment(endDate.val(), format));					
+
+			var errorTypeStart = 'invalid-start-date';
+			var errorTypeEnd = 'invalid-end-date';
+
+			if(valid){
+				removeError({el : startDate,error: errorTypeStart})
+				removeError({el : endDate,error: errorTypeEnd})
+			} else {				
+				// specific errors for from and to date		
+				if(target.attr('id') == 'graph-startdate'){
+					//infoWindow.showMessage('error', messages.error[erorTypeStart]);
+					pushError({el : startDate,error: errorTypeStart})
+				} else {
+					pushError({el : endDate,error: errorTypeEnd})
+				}	
+			}				
+		},	
+
+		// on close modal
+		resetValidations = function(){
+			errors = [];
+			self.form.find('.has-error').removeClass('has-error');
+			self.form.find('[data-reset]').val('');
+			active = false;
+		};
+
+	return 	{
+		initGraphValidations : initGraphValidations,
+		resetValidations : resetValidations,
+		activateValidations : activateValidations,
+		validateLayers : validateLayers,
+		validateTime : validateTime,
+		isValid : function(){
+			return errors.length === 0 ? true : false
+		}
+	}
+})();
